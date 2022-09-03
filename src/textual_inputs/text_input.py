@@ -330,6 +330,9 @@ class TextInput(Widget):
                 self.value[: self._cursor_position]
                 + self.value[self._cursor_position + 1 :]
             )
+        elif self._cursor_position == len(self.value):
+            self.value = ""
+            self._cursor_position = 0
 
     def _key_printable(self, event: events.Key):
         """Handle all printable keys"""
